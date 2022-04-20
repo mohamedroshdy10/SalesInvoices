@@ -1,2 +1,41 @@
-This Will Be ATrack Changes Files
- This Frist Branch
+
+
+ this the plan for work in this project 
+ i will create 3 pakages 
+views 
+models
+contollers
+
+---------------------------------------
+          :Views:
+  i will create int the main page to display to the end user 
+  and the tow dilog box to enter a new table header and insert a new line 
+  --salesinvoicesframe
+  --dilogheader
+  --diloglines
+---------------------------------------
+  :Models:
+ i will crate here the tables 
+header table and lines table
+and tow 2 calss to carry the data to display 
+
+header and lines viewmdels
+ HeaderTable
+ LinesTable
+ HeaderTableviewModel
+ LinesTableViewModel
+-----------------------------------------------------------------
+         :Controllers:
+i will crate 2 controllers to mange my actions 
+ the first for menuactionbuttons
+and other for all buttones for save delete,....
+
+ ActionMenuController
+ ActionButtonesController
+---------------------------------------
+
+
+then i will attach some screen shots
+for the code and the reslute in dubge mode
+..................................................... that's untile now
+
