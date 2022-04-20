@@ -16,9 +16,9 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import models.LinesTableViewModel;
-import views.HeaderTableDialog;
-import views.LinesTablesDialog;
+import Models.LinesTableViewModel;
+import Views.HeaderTableDialog;
+import Views.LinesTablesDialog;
 
 /**
  *
@@ -389,7 +389,7 @@ public class SalesInvoiceFrame extends javax.swing.JFrame
         return headerTableDialog;
     }
 
-    public void setHeaderTableDialog(views.HeaderTableDialog headerTableDialog) {
+    public void setHeaderTableDialog(HeaderTableDialog headerTableDialog) {
         this.headerTableDialog = headerTableDialog;
     }
 
