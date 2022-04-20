@@ -1,2 +1,34 @@
-This Will Be ATrack Changes Files
- This Frist Branch
+
+ I Will Add the Layers
+Models
+Views 
+Controllers
+---------------
+Modles
+   Will Create The Tables And The TablesViewModel Which Will
+   Display The Data in it
+  
+ HeaderTable
+ LinesTable
+HeaderTableViewModel
+LineTableViewModle
+----------------------------
+Views
+  Will Crate The View To Show The Tables And Inputs and Lables
+
+SalesInoivcesFrame
+  And Tow Dialog For Each 2 Table
+Dialog for insert new header
+dialog for insert new line
+------------------------------------
+
+Contollers
+ will Crate 2 controlers to mange my work 
+1===> For each button clik 
+2==>for each button in the menu
+actionsButtons
+Menubuttons
+-------------------------------------------
+will attach some screenshots
+for deubg and some for the code
+ 
