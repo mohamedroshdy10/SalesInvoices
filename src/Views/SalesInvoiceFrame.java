@@ -90,6 +90,7 @@ public class SalesInvoiceFrame extends javax.swing.JFrame
         SaveFileMenu = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setName("SalesInvoices"); // NOI18N
 
         jLabel1.setText("Invoice Table");
 
@@ -118,6 +119,10 @@ public class SalesInvoiceFrame extends javax.swing.JFrame
         jLabel4.setToolTipText("");
 
         jLabel5.setText("Invoice Total:");
+
+        txtInvoiceCustomerName.setEditable(false);
+
+        txtInvocieDate.setEditable(false);
 
         jLabel6.setText("Invoice Iteams");
 
@@ -185,11 +190,11 @@ public class SalesInvoiceFrame extends javax.swing.JFrame
                                             .addComponent(jLabel2)
                                             .addComponent(jLabel3))
                                         .addGap(81, 81, 81)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtInvocieDate, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(lblInvoiceNumber)
                                             .addComponent(lblInvocieTotal)
-                                            .addComponent(txtInvoiceCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(txtInvocieDate, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                                            .addComponent(txtInvoiceCustomerName)))
                                     .addComponent(jLabel6)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)

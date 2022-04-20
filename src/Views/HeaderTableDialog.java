@@ -37,8 +37,9 @@ public class HeaderTableDialog extends JDialog {
         
        okBtn.addActionListener(frame.getListener());
         cancelBtn.addActionListener(frame.getListener());
-        setLayout(new GridLayout(3, 2));
-        
+        setLayout(new GridLayout(5,5));
+        setLocation(300, 400);
+        setSize(400, 400);
         add(invDateLbl);
         add(invDateField);
         add(custNameLbl);

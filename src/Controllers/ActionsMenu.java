@@ -54,7 +54,7 @@ private SalesInvoiceFrame SalFrame;
 
      private void LoadFile()   
      {
-       JOptionPane.showMessageDialog(SalFrame, "Please, select header file!", "Attension", JOptionPane.WARNING_MESSAGE);
+       JOptionPane.showMessageDialog(SalFrame, "Choose Your Header File,plz!", "Attension", JOptionPane.INFORMATION_MESSAGE);
        JFileChooser fc=new JFileChooser();
            int resulte= fc.showOpenDialog(SalFrame);
            try {
@@ -82,7 +82,7 @@ private SalesInvoiceFrame SalFrame;
                   invoiceHeaders.add(tbl);
               }
             SalFrame.setInvoicesArray(invoiceHeaders);
-         JOptionPane.showMessageDialog(SalFrame, "Please, select Lines file!", "Attension", JOptionPane.WARNING_MESSAGE);
+         JOptionPane.showMessageDialog(SalFrame, "Enter Youe Lines File,plz!", "Attension", JOptionPane.INFORMATION_MESSAGE);
                // JFileChooser fcLines=new JFileChooser();
                // int LinesResulte=fcLines.showOpenDialog(SalFrame);
                resulte=fc.showOpenDialog(SalFrame);
@@ -120,41 +120,44 @@ private SalesInvoiceFrame SalFrame;
          {
              
              e.printStackTrace();
+           System.out.println(e.fillInStackTrace().getMessage());
+
          }
            catch(ParseException e)
            {
                e.printStackTrace();
+               System.out.println(e.fillInStackTrace().getMessage());
            }
     }
       private void SaveFile()
     {
-        String headers = "";
-        String lines = "";
+        String headersTables = "";
+        String LinesTable = "";
         for (HeaderTable header : SalFrame.getInvoicesList()) {
-            headers += header.getDataAsCSV();
-            headers += "\n";
+            headersTables += header.getDataAsCSV();
+            headersTables += "\n";
             for (LinesTable line : header.getLines()) {
-                lines += line.getDataAsCSV();
-                lines += "\n";
+                LinesTable += line.getDataAsCSV();
+                LinesTable += "\n";
             }
         }
-        JOptionPane.showMessageDialog(SalFrame, "Please, select file to save header data!", "Attension", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(SalFrame, "Save Header To!", "Attension", JOptionPane.INFORMATION_MESSAGE);
         JFileChooser fileChooser = new JFileChooser();
         int result = fileChooser.showSaveDialog(SalFrame);
         if (result == JFileChooser.APPROVE_OPTION) {
             File headerFile = fileChooser.getSelectedFile();
             try {
                 FileWriter hFW = new FileWriter(headerFile);
-                hFW.write(headers);
+                hFW.write(headersTables);
                 hFW.flush();
                 hFW.close();
 
-                JOptionPane.showMessageDialog(SalFrame, "Please, select file to save lines data!", "Attension", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(SalFrame, "Save Lines TO!", "Attension", JOptionPane.INFORMATION_MESSAGE);
                 result = fileChooser.showSaveDialog(SalFrame);
                 if (result == JFileChooser.APPROVE_OPTION) {
                     File linesFile = fileChooser.getSelectedFile();
                     FileWriter lFW = new FileWriter(linesFile);
-                    lFW.write(lines);
+                    lFW.write(LinesTable);
                     lFW.flush();
                     lFW.close();
                 }

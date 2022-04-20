@@ -45,7 +45,9 @@ public class LinesTablesDialog extends JDialog{
         
         okBtn.addActionListener(frame.getListener());
         cancelBtn.addActionListener(frame.getListener());
-        setLayout(new GridLayout(4, 2));
+        setLayout(new GridLayout(5, 2));
+        setLocation(500, 500);
+        setSize(600,600);
         
         add(itemNameLbl);
         add(itemNameField);

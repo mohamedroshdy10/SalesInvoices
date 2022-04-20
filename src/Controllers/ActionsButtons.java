@@ -18,6 +18,7 @@ import javax.swing.event.ListSelectionListener;
 import Models.LinesTableViewModel;
 import Views.HeaderTableDialog;
 import Views.LinesTablesDialog;
+import java.text.DateFormat;
 
 /**
  *
@@ -100,7 +101,6 @@ public class ActionsButtons implements ActionListener, ListSelectionListener
         frame.getLinesTableViewModel().fireTableDataChanged();
         frame.getLinesTableViewModel().fireTableDataChanged();
         frame.getLblInvocieTotal().setText("" + invoice.InvocieTotal());
-        displayInvoices();
     }
        
        
@@ -120,6 +120,7 @@ public class ActionsButtons implements ActionListener, ListSelectionListener
         frame.getHeaderTableDialog().dispose();
         frame.setHeaderTableDialog(null);
         try {
+            
             Date invDate = SalesInvoiceFrame.dateFormat.parse(invDateStr);
             int invNum = getNextInvoiceNum();
             HeaderTable invoiceHeader = new HeaderTable(invNum, invDate,custName);
@@ -131,10 +132,9 @@ public class ActionsButtons implements ActionListener, ListSelectionListener
             }
         } catch (ParseException ex) 
         {
-            JOptionPane.showMessageDialog(frame, "Wrong date format", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "plz,Enter A Valid Date Format To Add New Invoices", "Error", JOptionPane.ERROR_MESSAGE);
             ex.printStackTrace();
         }
-        displayInvoices();
     }
          private int getNextInvoiceNum() 
         {
@@ -160,19 +160,11 @@ public class ActionsButtons implements ActionListener, ListSelectionListener
         frame.getTxtInvocieDate().setText("");
         frame.getLblInvoiceNumber().setText("");
         frame.getLblInvocieTotal().setText("");
-        displayInvoices();
     }
         
        
         
-     private void displayInvoices() 
-    {
-        System.out.println("***************************");
-        for (HeaderTable header : frame.getInvoicesList()) {
-            System.out.println(header);
-        }
-        System.out.println("***************************");
-    }
+   
      private void SelectRowInHeaderTable() {
         int selectedRowIndex = frame.getTblInvoices().getSelectedRow();
         if (selectedRowIndex >= 0) 
@@ -195,7 +187,6 @@ public class ActionsButtons implements ActionListener, ListSelectionListener
      @Override
     public void valueChanged(ListSelectionEvent e)
     {
-        System.out.println("Selected ");
        SelectRowInHeaderTable();
     }
 
@@ -211,13 +202,13 @@ public class ActionsButtons implements ActionListener, ListSelectionListener
         frame.setLinesTablesDialog(null);
     }
 
-     private void deleteLine() {
+     private void deleteLine()
+     {
         int lineIndex = frame.getTblIteams().getSelectedRow();
         LinesTable line = frame.getLinesTableViewModel().getInvoiceLines().get(lineIndex);
         frame.getLinesTableViewModel().getInvoiceLines().remove(lineIndex);
         frame.getLinesTableViewModel().fireTableDataChanged();
         frame.getLinesTableViewModel().fireTableDataChanged();
         frame.getLblInvocieTotal().setText("" + line.getInvoiceHeader().getData());
-        displayInvoices();
     }
 }
